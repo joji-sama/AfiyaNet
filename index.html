@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfiyaNet: AI for Livestock Farming in Nigeria</title>
+    <style>
+        /* Basic Reset and Body Styles */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font as per instructions */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8fbfd; /* Lighter background for modern feel */
+            color: #333;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        
+        /* Container for content centering */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 0;
+        }
+
+        /* Header Styles */
+        header {
+            background: #1a5e3f; /* Darker green for a solid, agricultural feel */
+            color: #fff;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+            border-bottom-left-radius: 15px; /* Rounded corners */
+            border-bottom-right-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+        header h1 {
+            margin: 0;
+            padding-bottom: 5px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        header p {
+            margin: 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, #28a745, #218838); /* Green gradient */
+            color: #fff;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            padding: 40px 20px;
+            border-radius: 15px; /* Rounded corners */
+            margin: 30px auto; /* Centered with margin */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+        }
+        .hero h2 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            font-weight: 800;
+        }
+        .hero p {
+            font-size: 1.4em;
+            max-width: 800px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* General Section Styling */
+        .section {
+            padding: 50px 0;
+            background: #fff;
+            margin-bottom: 20px;
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: transform 0.3s ease-in-out; /* Hover effect */
+            text-align: center;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        .section h3 {
+            color: #1a5e3f; /* Consistent heading color */
+            margin-bottom: 30px;
+            font-size: 2.8em;
+            font-weight: 700;
+        }
+        .section p {
+            font-size: 1.1em;
+            max-width: 900px;
+            margin: 0 auto 20px auto;
+        }
+        .section img {
+            border-radius: 10px; /* Rounded image corners */
+            margin-top: 20px;
+            max-width: 90%;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .feature-item {
+            background: #e9f5ee; /* Lighter green background */
+            padding: 30px;
+            border-radius: 15px; /* Rounded corners */
+            width: 30%; /* Three items per row */
+            min-width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: left;
+            transition: transform 0.3s ease; /* Hover effect */
+        }
+        .feature-item:hover {
+            transform: translateY(-8px);
+        }
+        .feature-item img {
+            max-width: 90px;
+            margin-bottom: 20px;
+            display: block;
+            border-radius: 50%; /* Circular icons */
+            background-color: #1a5e3f;
+            padding: 10px;
+            box-shadow: none; /* Remove section image shadow */
+        }
+        .feature-item h4 {
+            color: #1a5e3f;
+            margin-top: 0;
+            font-size: 1.6em;
+            font-weight: 600;
+        }
+        .feature-item p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.7;
+            margin: 0; /* Reset margin from general p */
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .team-member {
+            text-align: center;
+            background: #e9f5ee; /* Lighter green background */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 28%; /* Roughly three items per row */
+            min-width: 280px;
+            transition: transform 0.3s ease; /* Hover effect */
+        }
+        .team-member:hover {
+            transform: translateY(-8px);
+        }
+        .team-member img {
+            border-radius: 50%;
+            max-width: 160px;
+            height: 160px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #1a5e3f; /* Stronger border */
+            box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Image specific shadow */
+        }
+        .team-member h4 {
+            margin-bottom: 8px;
+            color: #1a5e3f;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+        .team-member p {
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .team-member p.role {
+            font-style: italic;
+            color: #777;
+            font-size: 1em;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #1a5e3f; /* Consistent dark green */
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+            border-top-left-radius: 15px; /* Rounded corners */
+            border-top-right-radius: 15px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+        footer p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+        footer a {
+            color: #aaffaa; /* Lighter green for links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .hero h2 {
+                font-size: 3em;
+            }
+            .feature-item, .team-member {
+                width: 45%; /* Two items per row on tablets */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 10px 0;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            .hero {
+                min-height: 300px;
+                margin: 20px auto;
+            }
+            .hero h2 {
+                font-size: 2.2em;
+            }
+            .hero p {
+                font-size: 1.1em;
+            }
+            .section h3 {
+                font-size: 2em;
+            }
+            .feature-item, .team-member {
+                width: 90%; /* Single column on mobile */
+                min-width: unset;
+            }
+            .feature-item img, .team-member img {
+                max-width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="AfiyaNet Logo.png" alt="AfiyaNet Logo" style="max-width: 150px; margin-bottom: 10px;">
+            <h1>AfiyaNet</h1>
+            <p>AI for Precision Livestock Farming in Nigeria</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Empowering Nigerian Farmers with AI-Driven Livestock Care</h2>
+            <p>AfiyaNet provides accessible, intelligent solutions to combat animal mortality and boost productivity for smallholder farmers, leveraging cutting-edge Llama AI.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h3>The Challenge in Nigerian Livestock Farming</h3>
+            <p>Nigerian smallholder livestock farmers face significant economic losses due to high animal mortality and morbidity from preventable diseases, suboptimal nutrition, and delayed access to veterinary expertise. This knowledge and access gap severely curtails productivity and impacts food security across the nation.</p>
+            <img src="https://placehold.co/800x400/28a745/ffffff?text=Challenges+for+Nigerian+Farmers" alt="Challenges for Nigerian Farmers">
+        </div>
+    </section>
+
+    <section class="section" style="background-color: #f0f8f0;">
+        <div class="container">
+            <h3>Our Solution: AfiyaNet's Llama-Powered Approach</h3>
+            <p>AfiyaNet is a mobile-first, comprehensive platform designed to empower livestock farmers with AI-driven insights for enhanced animal health, optimized breeding, and improved nutrition management.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <img src="https://placehold.co/90x90/1a5e3f/ffffff?text=NLP" alt="NLP Icon">
+                    <h4>Local Language NLP (Llama)</h4>
+                    <p>Utilizes Llama to process voice and text inputs in major Nigerian languages (Hausa, Yoruba, Igbo, Pidgin), ensuring intuitive and accessible communication for all farmers.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="https://placehold.co/90x90/1a5e3f/ffffff?text=CV" alt="Computer Vision Icon">
+                    <h4>Image-Assisted Diagnostics (Llama)</h4>
+                    <p>Llama-powered Computer Vision models analyze farmer-uploaded smartphone images for preliminary visual assessment of animal symptoms, enabling early detection.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="https://placehold.co/90x90/1a5e3f/ffffff?text=ML" alt="Machine Learning Icon">
+                    <h4>Predictive Analytics (Llama)</h4>
+                    <p>Sophisticated ML algorithms, potentially based on Llama, analyze patterns in data to predict disease outbreaks and offer tailored feed optimization recommendations.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="https://placehold.co/90x90/1a5e3f/ffffff?text=IoT" alt="IoT Icon">
+                    <h4>Affordable IoT Integration</h4>
+                    <p>Incorporates data from cost-effective IoT sensors (e.g., ambient temperature/humidity) to complement farmer observations and enhance AI accuracy.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="https://placehold.co/90x90/1a5e3f/ffffff?text=Vet" alt="Vet Icon">
+                    <h4>Emergency Vet Connection</h4>
+                    <p>Facilitates quick connection to registered veterinarians or community animal health workers in urgent cases, improving response times.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="https://placehold.co/90x90/1a5e3f/ffffff?text=User" alt="User Experience Icon">
+                    <h4>User-Centric & Inclusive Design</h4>
+                    <p>Built with USSD, voice, and simple app interfaces to cater to varying digital literacy levels and infrastructural limitations in rural Nigeria.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h3>Our Impact Vision: Next 12 Months</h3>
+            <p>In the next year, AfiyaNet aims to demonstrate significant impact through our Lean MVP: we anticipate a reduction in animal mortality and morbidity among pilot farmers, improved farmer decision-making through accessible AI insights, and increased digital literacy. We will also validate our product-market fit and establish a network of community champions.</p>
+            <img src="https://placehold.co/800x400/218838/ffffff?text=AfiyaNet+Projected+Impact" alt="AfiyaNet Projected Impact">
+        </div>
+    </section>
+
+    <section class="section" style="background-color: #f0f8f0;">
+        <div class="container">
+            <h3>Meet The AfiyaNet Team</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="George.jpeg" alt="George Thaddyoparaocha">
+                    <h4>George Chukwuebuka Thaddyoparaocha</h4>
+                    <p class="role">Head of Community Engagement & User Adoption / Co-Founder</p>
+                    <p>Drives farmer trust and adoption through deep community understanding and strategic outreach.</p>
+                </div>
+                <div class="team-member">
+                    <img src="Daniel.jpeg" alt="Daniel Nwangwu">
+                    <h4>Daniel Nwangwu</h4>
+                    <p class="role">Lead AI & Backend Engineer / Co-Founder</p>
+                    <p>Architects scalable AI systems and high-performance backends for seamless operation.</p>
+                </div>
+                <div class="team-member">
+                    <img src="king.jpeg" alt="King Eshiebor">
+                    <h4>King Oshobugie Eshiebor</h4>
+                    <p class="role">Lead Frontend & Data Integration Engineer / Co-Founder</p>
+                    <p>Ensures intuitive user experiences and robust data pipelines for actionable insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 AfiyaNet. All rights reserved.</p>
+            <p>Contact: <a href="mailto:your_email@example.com">your_email@example.com</a></p>
+            <p><a href="https://www.linkedin.com/in/georgethaddy/">George's LinkedIn</a> | <a href="https://www.linkedin.com/in/danielnwangwu/">Daniel's LinkedIn</a> | <a href="https://www.linkedin.com/in/kingeshiebor/">King's LinkedIn</a></p>
+            <p>Innovating for a healthier, more productive livestock future in Nigeria.</p>
+        </div>
+    </footer>
+</body>
+</html>
